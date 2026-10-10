@@ -9,7 +9,7 @@ int main() {
 
     std::cout << std::fixed << std::setprecision(2);
     
-    std::cout << "===Амплитуда аудиосигнала===\n";
+    std::cout << "Амплитуда аудиосигнала\n";
     std::cout << "Количество элементов: " << n << "\n";
     std::cout << "Сумма амплитуд: " << arr_sum(amplitude, n) << "\n";
     std::cout << "Максимальная амплитуда: " << arr_max(amplitude, n) << "\n";
