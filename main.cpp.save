@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cstddef>
+
+int arr_sum(const int* a, std::size_t n) {
+    int s = 0;
+    for (std::size_t i = 0; i < n; ++i) s += a[i];
+    return s;
+}
+
+int arr_max(const int* a, std::size_t n) {
+    int m = a[0];
+    for (std::size_t i = 1; i < n; ++i)
+        if (a[i] > m) m = a[i];
+    return m;
+}
+
+int arr_min(const int* a, std::size_t n) {
+    int m = a[0];
+    for (std::size_t i = 1; i < n; ++i)
+        if (a[i] < m) m = a[i];
+    return m;
+}
+
+double arr_average(const int* a, std::size_t n) {
+    return static_cast<double>(arr_sum(a, n)) / n;
+}
+
+int main() {
+    int data[] = {5, 3, 8, 1, 9, 2};
+    const std::size_t n = sizeof(data) / sizeof(data[0]);
+
+    std::cout << "Sum: " << arr_sum(data, n) << '\n';
+    std::cout << "Max: " << arr_max(data, n) << '\n';
+    std::cout << "Min: " << arr_min(data, n) << '\n';
+    std::cout << "Avg: " << arr_average(data, n) << '\n';
+
+    return 0;
+}
+
+
